@@ -34,8 +34,9 @@ import FormatUtils._
  * @param times Number of executions to be performed during the performance testing
  *
  * @author Patrick Nicolas
- * @since March 17, 2014
- * @note Scala for Machine Learning Chapter 12 Scalable frameworks/Scala/Parallel collections
+ * @since 0.98.1 March 17, 2014
+ * @note Scala for Machine Learning Chapter 16 Parallelism in Scala and Akka
+ * @version 0.99.2
  */
 abstract class Parallelism[U](times: Int) {
   require(times > 0 && times < 512, s"Parallelism number of executions $times is out of range")
@@ -83,8 +84,9 @@ abstract class Parallelism[U](times: Int) {
  * tasks is out of range
  *
  * @author Patrick Nicolas
- * @since March 17, 2014
- * @note Scala for Machine Learning Chapter 12 Scalable frameworks/Scala/Parallel collections
+ * @since 0.98.1 March 17, 2014
+ * @note Scala for Machine Learning Chapter 16 Parallelism in Scala and Akka
+ * @version 0.99.2
  */
 private[scalaml] class ParallelArray[U](u: Array[U], v: ParArray[U], times: Int) extends Parallelism[U](times) {
   import ParallelArray._, DisplayUtils._
@@ -157,8 +159,9 @@ private[scalaml] class ParallelArray[U](u: Array[U], v: ParArray[U], times: Int)
  * Companion object for the class ParArrayBenchmark. This singleton
  * is used to define constant and validate the class parameters.
  * @author Patrick Nicolas
- * @since March 17, 2014
- * @note Scala for Machine Learning Chapter 12 Scalable frameworks/Scala/Parallel collections
+ * @since 0.98.1 March 17, 2014
+ * @note Scala for Machine Learning Chapter 16 Parallelism in Scala and Akka
+ * @version 0.99.2
  */
 private[scalaml] object ParallelArray {
   /**
@@ -192,8 +195,9 @@ private[scalaml] object ParallelArray {
  * @param v Parameterized parallel map
  * @param times Number of executions in the performance test.
  * @author Patrick Nicolas
- * @since March 17, 2014
- * @note Scala for Machine Learning Chapter 12 Scalable frameworks/Scala/Parallel collections
+ * @since 0.98.1 March 17, 2014
+ * @note Scala for Machine Learning Chapter 16 Parallelism in Scala and Akka
+ * @version 0.99.2
  */
 final private[scalaml] class ParallelMap[U](
     u: immutable.Map[Int, U],
@@ -252,8 +256,9 @@ final private[scalaml] class ParallelMap[U](
  * Companion object for the class ParMapBenchmark. This singleton
  * is used to define constant and validate the class parameters.
  * @author Patrick Nicolas
- * @since March 17, 2014
- * @note Scala for Machine Learning Chapter 12 Scalable frameworks/Scala/Parallel collections
+ * @since 0.98.1 March 17, 2014
+ * @note Scala for Machine Learning Chapter 16 Parallelism in Scala and Akka
+ * @version 0.99.2
  */
 private[scalaml] object ParallelMap {
 

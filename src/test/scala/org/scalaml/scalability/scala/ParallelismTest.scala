@@ -50,7 +50,7 @@ final class ParallelismTest extends FlatSpec with Matchers with Logging {
 
 
   it should s"$name: arrays" in {
-    show(s"$name: arrays")
+    show(s"Evaluation of arrays")
 
     // Generate random vector for both the non-parallel and parallel array
     val data = Array.fill(SZ)(Random.nextDouble)
@@ -72,7 +72,7 @@ final class ParallelismTest extends FlatSpec with Matchers with Logging {
   }
 
   it should s"$name: maps" in {
-    show(s"$name: maps")
+    show(s"Evaluation of maps")
 
     val mapData = new HashMap[Int, Double]
     Range(0, SZ).foreach(n => mapData.put(n, Random.nextDouble))
@@ -91,8 +91,6 @@ final class ParallelismTest extends FlatSpec with Matchers with Logging {
     evalRange.foreach(n => ratios.update(n, benchmark.filter(filterF)(n)))
     val resultfilter = ratios.tail
     resultfilter.sum / resultfilter.size < 1.0 should be(true)
-    display(resultfilter, "ParMap.filter")
-    // evaluateParMap(mapF, filterF)
   }
 
 

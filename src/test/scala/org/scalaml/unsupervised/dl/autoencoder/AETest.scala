@@ -28,7 +28,7 @@ final class AETest extends FlatSpec with Matchers with Logging with Resource {
   protected val name: String = "Auto-Encoder"
 
   it should s"$name single hidden layer" in {
-    show( s"$name single hidden layer")
+    show( s"Single hidden layer")
 
     val REL_PATH = "unsupervised/ae/"
     val ALPHA = 0.8
@@ -58,7 +58,7 @@ final class AETest extends FlatSpec with Matchers with Logging with Resource {
     }
 
     val path: String = getPath(REL_PATH).getOrElse(".")
-    val prices: Array[DblVec] = symbols.map(s => DataSource(s"$path$s.csv", true, true, 1))
+    val prices = symbols.map(s => DataSource(s"$path$s.csv", true, true, 1))
       .map( _.flatMap(_.get(close))).filter(_.isSuccess).map(_.get)
 
     val config = AEConfig(ALPHA, ETA, LAMBDA, BETA, NUM_EPOCHS, EPS)

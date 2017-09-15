@@ -50,7 +50,7 @@ final class StreamingTest extends FlatSpec with Matchers with Logging with Befor
 
 
   it should s"$name data extraction without checkpoint" in {
-    show(s"$name data extraction without checkpoint")
+    show(s"Data extraction without checkpoint")
 
     val streamer: StreamingLifeCycle = new StreamingLifeCycle {
       override val timeOut: Long = 10L
@@ -66,7 +66,7 @@ final class StreamingTest extends FlatSpec with Matchers with Logging with Befor
   }
 
   it should s"$name data extraction with check point" in {
-    show(s"$name data extraction with check point")
+    show(s"Data extraction with check point")
 
     val streamer: StreamingLifeCycle = new StreamingLifeCycle {
       override val timeOut: Long = 10L
