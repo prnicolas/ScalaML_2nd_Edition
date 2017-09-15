@@ -17,9 +17,10 @@
   */
 package org.scalaml.unsupervised.dl.autoencoder
 
-import org.scalaml.supervised.nnet.mlp.{MLPConnection, MLPModel, MLPNetwork}
+import org.scalaml.supervised.mlp.{MLPConnection, MLPModel}
 import AE._
 import org.scalaml.stats.TSeries.zipWithShift1
+import org.scalaml.supervised.mlp.{MLPConnection, MLPModel, MLPNetwork}
 
 /**
   *

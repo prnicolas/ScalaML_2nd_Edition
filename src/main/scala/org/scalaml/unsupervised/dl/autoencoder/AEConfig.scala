@@ -17,7 +17,7 @@
   */
 package org.scalaml.unsupervised.dl.autoencoder
 
-import org.scalaml.supervised.nnet.mlp.MLPConfig
+import org.scalaml.supervised.mlp.MLPConfig
 
 /**
   * Configuration for the Sparse Autoencoder

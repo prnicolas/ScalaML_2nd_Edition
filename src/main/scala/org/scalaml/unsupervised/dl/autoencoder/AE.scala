@@ -21,8 +21,9 @@ import org.apache.log4j.Logger
 import org.scalaml.Predef.Context.ToDouble
 import org.scalaml.core.ITransform
 import org.scalaml.stats.TSeries.dimension
-import org.scalaml.supervised.nnet.mlp.MLP.MLPMode
-import org.scalaml.supervised.nnet.mlp.{MLPModel, MLPNetwork}
+import org.scalaml.supervised.mlp.MLP.MLPMode
+import org.scalaml.supervised.mlp.MLPModel
+import org.scalaml.supervised.mlp.MLPModel
 import org.scalaml.util.LoggingUtils.Monitor
 import org.scalaml.util.MathUtils._
 

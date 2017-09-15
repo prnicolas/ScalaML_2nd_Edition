@@ -28,49 +28,57 @@ import org.scalaml.workflow.data.DataSource
 import org.scalatest.FunSuite
 import org.scalatest.concurrent.ScalaFutures
 
+import scala.concurrent.Future
+
 
 final class KmeansTest extends FunSuite with ScalaFutures with Logging with Resource {
+  import scala.concurrent.ExecutionContext.Implicits.global
 
-  protected val name = "Spark MLlib K-Means"
+  protected[this] val name = "Spark MLlib K-Means"
   private val K = 8
-  private val NRUNS = 16
-  private val MAXITERS = 200
+  private val NRUNS = 4
+  private val MAXITERS = 60
   private val PATH = "spark/CSCO.csv"
   private val CACHE = false
 
   test(s"$name evaluation") {
-    show(s"$name evaluation")
+    show(s"Evaluation")
 
     Logger.getRootLogger.setLevel(Level.ERROR)
-      // The Spark configuration has to be customize to your environment
-    val sparkConf = new SparkConf().setMaster("local[4]")
+    // The Spark configuration has to be customize to your environment
+    val sparkConf = new SparkConf().setMaster("local")
       .setAppName("Kmeans")
       .set("spark.executor.memory", "4096m")
 
     implicit val sc = SparkContext.getOrCreate(sparkConf) // no need to load additional jar file
 
-    extract.map(input => {
-      val volatilityVol = zipToSeries(input._1, input._2)
+    val kmeanClustering: Option[Kmeans] = extract.map(input => {
+      val volatilityVol = zipToSeries(input._1, input._2).take(500)
 
       val config = new KmeansConfig(K, MAXITERS, NRUNS)
-
       val rddConfig = RDDConfig(CACHE, StorageLevel.MEMORY_ONLY)
-      val kmeans = Kmeans(config, rddConfig, volatilityVol)
-
-      show(s"$name \n${kmeans.toString}\nPrediction:\n")
-      val obs = Array[Double](0.23, 0.67)
-      val clusterId1 = kmeans |> obs
-      show(s"(${obs(0)},${obs(1)}) => Cluster #$clusterId1")
-
-      val obs2 = Array[Double](0.56, 0.11)
-      val clusterId2 = kmeans |> obs2
-      val result = s"(${obs2(0)},${obs2(1)}) => Cluster #$clusterId2"
-      show(s"$name result: $result")
+      Kmeans(config, rddConfig, volatilityVol)
     })
 
-    // SparkContext is cleaned up gracefully
+      // Wraps into a future to enforce time out in case of a straggler
+    val ft = Future[Boolean] { predict(kmeanClustering) }
+    whenReady(ft) { result => assert(result) }
     sc.stop
   }
+
+   private def predict(kmeanClustering: Option[Kmeans]): Boolean = {
+     kmeanClustering.map(kmeansCluster => {
+       val obs = Array[Double](0.1, 0.9)
+       val clusterId1 = kmeansCluster |> obs
+       show(s"(${obs(0)},${obs(1)}) => Cluster #$clusterId1")
+
+       val obs2 = Array[Double](0.56, 0.11)
+       val clusterId2 = kmeansCluster |> obs2
+       val result = s"(${obs2(0)},${obs2(1)}) => Cluster #$clusterId2"
+       show(s"$name result: $result")
+     })
+     true
+   }
 
   private def extract: Option[(DblVec, DblVec)] = {
     import scala.util._
