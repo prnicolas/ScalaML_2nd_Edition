@@ -10,7 +10,7 @@
   * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   *
   * The source code in this file is provided by the author for the sole purpose of illustrating the
-  * concepts and algorithms presented in "Scala for Machine Learning".
+  * concepts and algorithms presented in "Scala for Machine Learning 2nd edition".
   * ISBN: 978-1-783355-874-2 Packt Publishing.
   *
   * Version 0.99.2
@@ -24,34 +24,42 @@ import org.apache.spark.sql
 import sql._
 
 /**
-  * Model estimator used for the classification
-  *
+  * Model estimator used for the classification. The class includes the computation
+  * of quality measure (F1 and area under the ROC)
+  * @author Patrick Nicolas
+  * @version 0.99.2
   * @tparam T type of the model to be estimated
   */
 private[spark] trait ModelEstimator[T <: Model[T]] {
   protected[this] val estimator: Estimator[T]
   /**
-    *
-    * @param trainDf
-    * @param stages
-    * @return
+    * Set up and execute the pipeline
+    * @param trainDf Data frame containint the training set
+    * @param stages The different stages or transforms in the pipeline
+    * @return Pipeline predictive model
     */
+  @throws(classOf[IllegalArgumentException])
   def apply(trainDf: DataFrame, stages: Array[PipelineStage]): PipelineModel = {
-    trainDf.printSchema
+    require(stages.size > 0, "Cannot process a pipeline without stages")
+
+    trainDf.printSchema // For debugging purpose - schema
     val pipeline = new Pipeline().setStages(stages ++ Array[PipelineStage](estimator))
     pipeline.fit(trainDf)
   }
 
   /**
-    *
-    * @param trainDf
-    * @param stages
-    * @return
+    * Extraction of the summary information regarding ROC for the binary classifier
+    * @param trainDf Data frame containint the training set
+    * @param stages The different stages or transforms in the pipeline
+    * @return Pair of f1-score and area under the ROC.
     */
+  @throws(classOf[IllegalArgumentException])
   final def trainWithSummary(
     trainDf: DataFrame,
     stages: Array[PipelineStage]
   ): Option[(Double, Double)] = {
+    require(stages.size > 0, "Cannot process a pipeline without stages")
+
     // Print the training set data frame
     trainDf.printSchema
 

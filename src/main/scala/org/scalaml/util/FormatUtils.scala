@@ -10,7 +10,7 @@
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *
  * The source code in this file is provided by the author for the sole purpose of illustrating the
- * concepts and algorithms presented in "Scala for Machine Learning".
+ * concepts and algorithms presented in "Scala for Machine Learning 2nd edition".
  * ISBN: 978-1-783355-874-2 Packt Publishing.
  *
  * Version 0.99.2
@@ -24,8 +24,9 @@ import org.scalaml.Predef._
  * string format and conversion for rounding errors
  *
  * @author Patrick Nicolas
- * @since May 15, 2014
- * @note Scala for Machine Learning
+ * @since 0.98.1 May 15, 2014
+ * @see Scala for Machine Learning
+ *  @version 0.99.2
  */
 private[scalaml] object FormatUtils {
   import java.text.DecimalFormat

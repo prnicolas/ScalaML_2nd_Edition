@@ -10,7 +10,7 @@
   * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   *
   * The source code in this file is provided by the author for the sole purpose of illustrating the
-  * concepts and algorithms presented in "Scala for Machine Learning".
+  * concepts and algorithms presented in "Scala for Machine Learning 2nd edition".
   * ISBN: 978-1-783355-874-2 Packt Publishing.
   *
   * Version 0.99.2
@@ -31,12 +31,14 @@ import org.scalaml.util.MathUtils.Histogram
   * @tparam T Type of the feature
   * @see Scala for Machine Learning - Chapter 5 - Dimension Reduction / Divergences
   */
+@throws(classOf[IllegalArgumentException])
 private[scalaml] class KullbackLeibler[@specialized(Double) T: ToDouble](
   p: Seq[T],
   q: Seq[T],
   normalized: Boolean = true
 )(implicit ordering: Ordering[T]) extends Divergence {
 
+  require(p.size > 0 && q.size > 0, "Cannot compute KL with undefined data sets")
   implicit def toDouble(t: T): Double = implicitly[ToDouble[T]].apply(t)
 
   private[this] val (min, max): (Double, Double) = (
@@ -54,6 +56,7 @@ private[scalaml] class KullbackLeibler[@specialized(Double) T: ToDouble](
     * @param nSteps Number of steps or frequency bins used to compute the KL divergence
     * @return Divergence value
     */
+  @throws(classOf[IllegalArgumentException])
   override def divergence(nSteps: Int): Double = {
     import Math._
     require(nSteps > 2, s"KullbackLeibler divergence not available for nSteps $nSteps < 2")
@@ -73,3 +76,5 @@ private[scalaml] class KullbackLeibler[@specialized(Double) T: ToDouble](
     if(normalized) kl/Math.max(p.size , q.size) else kl
   }
 }
+
+// -------------------------------  EOF ------------------------------------------------

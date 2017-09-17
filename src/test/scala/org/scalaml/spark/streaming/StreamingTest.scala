@@ -10,7 +10,7 @@
   * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   *
   * The source code in this file is provided by the author for the sole purpose of illustrating the
-  * concepts and algorithms presented in "Scala for Machine Learning".
+  * concepts and algorithms presented in "Scala for Machine Learning 2nd edition".
   * ISBN: 978-1-783355-874-2 Packt Publishing.
   *
   * Version 0.99.2
@@ -37,20 +37,21 @@ object Account {
 /**
   * Evaluation of Apache Spark streaming for the continuous extraction of data.
   */
-final class StreamingTest extends FlatSpec with Matchers with Logging with BeforeAndAfterAll with Resource {
+final class StreamingTest extends FlatSpec with Matchers with Logging with Resource {
   protected[this] val name = "Apache Spark Streaming"
 
     // Define the configuration of the streamer life cycle that initializes
     // the Spark and Streaming contexts
-  var active = false
+  private var active = false
 
-  val fileNames = Array[String](
+
+  final val fileNames = Array[String](
     "streaming_input.csv", "streaming_input2.csv"
   )
 
 
   it should s"$name data extraction without checkpoint" in {
-    show(s"Data extraction without checkpoint")
+    show("Data extraction without checkpoint")
 
     val streamer: StreamingLifeCycle = new StreamingLifeCycle {
       override val timeOut: Long = 10L
@@ -62,16 +63,17 @@ final class StreamingTest extends FlatSpec with Matchers with Logging with Befor
 
     streamingContext.start
     streamingContext.stop(true, true)
+    Thread.sleep(2000)
     streamingContext.awaitTerminationOrTimeout(streamer.timeOut)
   }
 
+
   it should s"$name data extraction with check point" in {
-    show(s"Data extraction with check point")
+    show("Data extraction with check point")
 
     val streamer: StreamingLifeCycle = new StreamingLifeCycle {
       override val timeOut: Long = 10L
     }
-
     implicit val streamingContext: StreamingContext = streamer.streamingContext
     implicit val sparkContext: SparkContext = streamer.sparkContext
 
@@ -88,6 +90,7 @@ final class StreamingTest extends FlatSpec with Matchers with Logging with Befor
 
     streamingContext.start
     streamingContext.stop(true, true)
+    Thread.sleep(2000)
     streamingContext.awaitTerminationOrTimeout(streamer.timeOut)
   }
 

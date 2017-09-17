@@ -10,7 +10,7 @@
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *
  * The source code in this file is provided by the author for the sole purpose of illustrating the
- * concepts and algorithms presented in "Scala for Machine Learning".
+ * concepts and algorithms presented in "Scala for Machine Learning 2nd edition".
  * ISBN: 978-1-783355-874-2 Packt Publishing.
  *
  * Version 0.99.2
@@ -66,7 +66,11 @@ private[scalaml] final class Cluster[T: ToDouble](val center: Array[Double]) {
    */
   final def size: Int = members.size
 
-  final def distanceToCentroid(x: Array[Double], distance: DistanceFunc[Double]): Double = distance(center, x)
+  @throws(classOf[IllegalArgumentException])
+  final def distanceToCentroid(x: Array[Double], distance: DistanceFunc[Double]): Double = {
+    require(x.length == center.length, "Size of input does not match size of centroid")
+    distance(center, x)
+  }
 
   /**
    * Recompute the coordinates for the center of this cluster.

@@ -10,7 +10,7 @@
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *
  * The source code in this file is provided by the author for the sole purpose of illustrating the
- * concepts and algorithms presented in "Scala for Machine Learning".
+ * concepts and algorithms presented in "Scala for Machine Learning 2nd edition".
  * ISBN: 978-1-783355-874-2 Packt Publishing.
  *
  * Version 0.99.2
@@ -19,15 +19,12 @@ package org.scalaml
 
 /**
  * This package object encapsulates application of Scalable frameworks described in
- * Scala for Machine Learning Chapter 12 - Scalable frameworks
+ * Scala for Machine Learning Chapter 16 - Parallelism with Scala and Akka
  *
  * - Application and performance of the Scala standard library parallel collections '''
  * org.scalam.scalability.scala'''
  *
  * - Application of actors and futures using Akka framework '''org.scalam.scalability.akka'''
- *
- * - Introduction and description of the Apache Spark framework and MLlib library '''
- * org.scalaml.scalability.spark'''
  */
 package object scalability {}
 // ---------------------------------------  EOF -----------------------------------------

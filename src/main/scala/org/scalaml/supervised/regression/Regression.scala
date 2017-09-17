@@ -10,7 +10,7 @@
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *
  * The source code in this file is provided by the author for the sole purpose of illustrating the
- * concepts and algorithms presented in "Scala for Machine Learning".
+ * concepts and algorithms presented in "Scala for Machine Learning 2nd edition".
  * ISBN: 978-1-783355-874-2 Packt Publishing.
  *
  * Version 0.99.2
@@ -26,7 +26,9 @@ import org.scalaml.Predef.Context._
 import org.scalaml.util.LoggingUtils._
 
 /**
- * Generic trait for the regression models in the library
+ * Generic trait for the regression models used in Scala for Machine Learning
+ * @author Patrick Nicolas
+ * @version 0.99.2
  */
 private[scalaml] trait Regression extends Monitor[Double] {
 
@@ -69,7 +71,7 @@ private[scalaml] trait Regression extends Monitor[Double] {
  * Companion object that define different versions of the margin or dot product of
  * data (array of values) and weights.
  * @author Patrick Nicolas
- * @version 0.99.1
+ * @version 0.99.2
  */
 object Regression {
 

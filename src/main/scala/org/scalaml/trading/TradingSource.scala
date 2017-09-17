@@ -10,7 +10,7 @@
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *
  * The source code in this file is provided by the author for the sole purpose of illustrating the
- * concepts and algorithms presented in "Scala for Machine Learning".
+ * concepts and algorithms presented in "Scala for Machine Learning 2nd edition".
  * ISBN: 978-1-783355-874-2 Packt Publishing.
  *
  * Version 0.99.2
@@ -25,7 +25,7 @@ import org.apache.log4j.Logger
  *
  *  @author Patrick Nicolas
  *  @since 0.98 Feb 17, 2014
- *  @version 0.98.1
+ *  @version 0.99.2
  *  @see Scala for Machine Learning Appendix "Financials 101"
  */
 object YahooFinancials extends Enumeration {
@@ -110,7 +110,7 @@ object YahooFinancials extends Enumeration {
  *
  *  @author Patrick Nicolas
  *  @since 0.98 Feb 19, 2014
- *  @version 0.98.1
+ *  @version 0.99.2
  *  @see Scala for Machine Learning Appendix: "Financials 101"
  */
 object GoogleFinancials extends Enumeration {
@@ -145,8 +145,8 @@ object GoogleFinancials extends Enumeration {
  * Enumerator to extract corporate financial ratio. The Object methods are implemented to
  * load the appropriate field and perform the type conversion
  * @author Patrick Nicolas
- * @since May 3, 2014
- * @note Scala for Machine Learning Appendix: Financials 101
+ * @since 0.98 May 3, 2014
+ * @see Scala for Machine Learning Appendix: Financials 101
  */
 object Fundamentals extends Enumeration {
   type Fundamentals = Value

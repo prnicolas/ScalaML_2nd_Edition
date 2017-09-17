@@ -10,7 +10,7 @@
   * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   *
   * The source code in this file is provided by the author for the sole purpose of illustrating the
-  * concepts and algorithms presented in "Scala for Machine Learning".
+  * concepts and algorithms presented in "Scala for Machine Learning 2nd edition".
   * ISBN: 978-1-783355-874-2 Packt Publishing.
   *
   * Version 0.99.2
@@ -32,12 +32,16 @@ import org.scalaml.spark.SessionLifeCycle
   * @param cols name of columns used
   * @param trainFile name of file containing the observations used in training
   * @tparam T Type of the model (ML algorithm)
+  * @author Patrick Nicolas
+  * @version 0.99.2
+  * @see Scala for Machine Learning Chapter 17 Apache Spark MLlib
   */
 abstract class Predictor[T <: Model[T]](
     estimate: Estimator[T],
     cols: Array[String],
     trainFile: String
 ) extends DataEncoding with SessionLifeCycle {
+
   override protected[this] val colNames: Array[String] = cols
   protected[this] val trainDf: DataFrame = csv2DF(trainFile)
 

@@ -10,7 +10,7 @@
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *
  * The source code in this file is provided by the author for the sole purpose of illustrating the
- * concepts and algorithms presented in "Scala for Machine Learning".
+ * concepts and algorithms presented in "Scala for Machine Learning 2nd edition".
  * ISBN: 978-1-783355-874-2 Packt Publishing.
  *
  * Version 0.99.2
@@ -20,6 +20,8 @@ package org.scalaml.unsupervised.functionapprox
 /**
  * Bin for histogram defines as a mean feature value, average target value _y and the
  * number of data point for this bin
+ * @author Patrick Nicolas
+ * @version 0.99.2
  * @param y average value for the bin
  */
 final private[scalaml] class Bin(var y: Double = 0.0) extends Serializable {

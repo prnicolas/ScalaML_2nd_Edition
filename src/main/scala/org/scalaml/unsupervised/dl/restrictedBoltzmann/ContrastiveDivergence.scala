@@ -10,7 +10,7 @@
   * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   *
   * The source code in this file is provided by the author for the sole purpose of illustrating the
-  * concepts and algorithms presented in "Scala for Machine Learning".
+  * concepts and algorithms presented in "Scala for Machine Learning 2nd edition".
   * ISBN: 978-1-783355-874-2 Packt Publishing.
   *
   * Version 0.99.2
@@ -32,11 +32,16 @@ import scala.annotation.implicitNotFound
   * gradient of the likelihood.
   * The computation of the contrastive divergence relies on the matrix multiplication
   * method defined in Apache Commons Math.
+  * @author Patrick Nicolas
+  * @version 0.99.2
   * @param nSamples Size of the sample to be extracted from the condition probability
   * @tparam T Type contextual bound to a Double
+  * @see Scala for Machine Learning Chapter 11 Deep learning/ Restricted Boltzmann Machine
   */
+@throws(classOf[IllegalArgumentException])
 @implicitNotFound(msg = "Contrastive divergence implicit conversion to Double undefined")
 private[scalaml] class ContrastiveDivergence[@specialized(Double) T: ToDouble](nSamples: Int) {
+  require(nSamples > 1, s"Cannot compute contrastive divergence with $nSamples samples")
 
   /**
     * Method to compute the contrastive divergence using a sampler and conditional

@@ -10,7 +10,7 @@
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *
  * The source code in this file is provided by the author for the sole purpose of illustrating the
- * concepts and algorithms presented in "Scala for Machine Learning".
+ * concepts and algorithms presented in "Scala for Machine Learning 2nd edition".
  * ISBN: 978-1-783355-874-2 Packt Publishing.
  *
  * Version 0.99.2
@@ -30,9 +30,10 @@ import NaiveBayesModel._
  * @param likelihoodSet  List of likelihood or priors for every classes in the model.
  * @author Patrick Nicolas
  * @since 0.98 February 11, 2014
- * @version 0.99.1
- * @see Scala for Machine Learning  Chapter 5 "Naive Bayes Models" / Naive Bayes Classifiers
+ * @version 0.99.2
+ * @see Scala for Machine Learning  Chapter 6 "Naive Bayes Models" / Naive Bayes Classifiers
  */
+@throws(classOf[IllegalArgumentException])
 private[scalaml] class MultiNaiveBayesModel[T] protected (
     likelihoodSet: Seq[Likelihood[T]]
 ) extends NaiveBayesModel[T] {

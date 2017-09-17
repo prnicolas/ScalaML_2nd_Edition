@@ -10,7 +10,7 @@
   * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   *
   * The source code in this file is provided by the author for the sole purpose of illustrating the
-  * concepts and algorithms presented in "Scala for Machine Learning".
+  * concepts and algorithms presented in "Scala for Machine Learning 2nd edition".
   * ISBN: 978-1-783355-874-2 Packt Publishing.
   *
   * Version 0.99.2
@@ -32,13 +32,12 @@ private[scalaml] trait Sparsity {
   protected[this] var rhoLayerPrime: Array[Double] = rhoLayer
   private val lambda_1 = 1.0 - lambda
 
+  @throws(classOf[IllegalArgumentException])
   protected def update(activeValues: Array[Double]): Unit = {
-   // if( rhoLayerPrime == null)
-   //   rhoLayerPrime =  Array.ofDim[Double](rhoLayer.length)
-   // activeValues.indices.foreach(n => rhoLayerPrime(n) = lambda * rhoLayer(n) + lambda_1 * activeValues(n))
+    require(activeValues.size > 0, "Cannot initialize sparsity with undefined values")
+
     rhoLayerPrime = activeValues.indices.map(n => lambda * rhoLayer(n) + lambda_1 * activeValues(n)).toArray
   }
-
 
   protected def penalize(bias: Double, index: Int): Double = bias - beta*(rhoLayer(index)- rhoLayerPrime(index))
 }

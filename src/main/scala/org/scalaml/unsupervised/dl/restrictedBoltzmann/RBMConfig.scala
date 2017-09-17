@@ -10,7 +10,7 @@
   * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   *
   * The source code in this file is provided by the author for the sole purpose of illustrating the
-  * concepts and algorithms presented in "Scala for Machine Learning".
+  * concepts and algorithms presented in "Scala for Machine Learning 2nd edition".
   * ISBN: 978-1-783355-874-2 Packt Publishing.
   *
   * Version 0.99.2
@@ -20,17 +20,23 @@ package org.scalaml.unsupervised.dl.restrictedBoltzmann
 
 /**
   * Data class for the configuration of the binary restricted Boltzmann machine
+  * @author Patrick Nicolas
+  * @version 0.99.2
+  *
   * @param learningRate learning rate
   * @param maxIters Maximum number of iterations allowed for the unsupervised training
   * @param tol tolerance or convergence criteria
   * @param penalty penalty function to compute the cost or penalty c = f(learningRate)
+  * @see Scala for Machine Learning Chapter 11 Deep learning/ Restricted Boltzmann Machine
   */
+@throws(classOf[IllegalArgumentException])
 case class RBMConfig(
   learningRate: Double,
   maxIters: Int,
   tol: Double,
   penalty: Double => Double) {
 
+  require(maxIters > 1, s"RBM configured with $maxIters maximum iterations, require >1")
   final def loss: Double = penalty(learningRate)
 }
 

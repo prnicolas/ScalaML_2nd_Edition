@@ -10,7 +10,7 @@
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *
  * The source code in this file is provided by the author for the sole purpose of illustrating the
- * concepts and algorithms presented in "Scala for Machine Learning".
+ * concepts and algorithms presented in "Scala for Machine Learning 2nd edition".
  * ISBN: 978-1-783355-874-2 Packt Publishing.
  *
  * Version 0.99.2
@@ -22,8 +22,9 @@ import org.apache.log4j.Logger
 /**
  * Singleton wrapper for information or debugging information.
  *  @author Patrick Nicolas
- *  @since December 3, 2013
- *  @note Scala for Machine Learning
+ *  @since 0.98 December 3, 2013
+ *  @version 0.99.2
+ *  @see Scala for Machine Learning
  */
 private[scalaml] object DisplayUtils {
   private val DEFAULT_SHOW_RETURN = 0 // Default return value after info display
@@ -43,8 +44,6 @@ private[scalaml] object DisplayUtils {
    * method
    * @tparam T parameter type for the Try
    * @param _try try instance to be extended
-   * @author Patrick Nicolas
-   * @since 0.99
    */
   implicit class extendTry[T](_try: scala.util.Try[T]) {
 

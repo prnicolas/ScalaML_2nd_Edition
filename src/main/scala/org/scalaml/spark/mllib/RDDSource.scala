@@ -10,7 +10,7 @@
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *
  * The source code in this file is provided by the author for the sole purpose of illustrating the
- * concepts and algorithms presented in "Scala for Machine Learning".
+ * concepts and algorithms presented in "Scala for Machine Learning 2nd edition".
  * ISBN: 978-1-783355-874-2 Packt Publishing.
  *
  * Version 0.99.2
@@ -41,7 +41,8 @@ import org.scalaml.workflow.data.DataSource
  * @param persist define the storage level for the RDD
  * @author Patrick Nicolas
  * @since 0.98.2 April 1, 2014
- * @note Scala for Machine Learning Chapter 12 Scalable frameworks / Apache Spark
+ * @see Scala for Machine Learning Chapter 16 Apache Spark MLlib
+ * @version 0.99.2
  */
 case class RDDConfig(cache: Boolean, persist: StorageLevel) extends Config
 
@@ -63,6 +64,7 @@ case class RDDConfig(cache: Boolean, persist: StorageLevel) extends Config
  * @author Patrick Nicolas
  * @since 0.98.2 April 1, 2014
  * @see Scala for Machine Learning Chapter 17 Apache Spark MLlib
+ * @version 0.99.2
  */
 @throws(classOf[IllegalArgumentException])
 @implicitNotFound(msg = "Spark context is implicitly undefined")

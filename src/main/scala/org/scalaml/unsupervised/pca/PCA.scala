@@ -10,7 +10,7 @@
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *
  * The source code in this file is provided by the author for the sole purpose of illustrating the
- * concepts and algorithms presented in "Scala for Machine Learning".
+ * concepts and algorithms presented in "Scala for Machine Learning 2nd edition".
  * ISBN: 978-1-783355-874-2 Packt Publishing.
  *
  * Version 0.99.2
@@ -52,8 +52,11 @@ case class PCAModel(covariance: DblMatrix, eigenvalues: Array[Double])
  * @see org.apache.commons.math3.linear._
  * @see http://commons.apache.org/proper/commons-math/
  */
+@throws(classOf[IllegalArgumentException])
 final private[scalaml] class PCA[T: ToDouble](xt: Vector[Array[T]])
     extends ITransform[Array[T], Double] with Monitor[T] {
+
+  require(xt.size > 0, "PCA has undefined input data")
 
   protected val logger = Logger.getLogger("PCA")
   private[this] val model: Option[PCAModel] = train

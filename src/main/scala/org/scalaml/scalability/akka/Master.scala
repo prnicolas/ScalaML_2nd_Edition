@@ -10,7 +10,7 @@
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *
  * The source code in this file is provided by the author for the sole purpose of illustrating the
- * concepts and algorithms presented in "Scala for Machine Learning".
+ * concepts and algorithms presented in "Scala for Machine Learning 2nd edition".
  * ISBN: 978-1-783355-874-2 Packt Publishing.
  *
  * Version 0.99.2
@@ -39,8 +39,9 @@ import Controller._, LoggingUtils._
  *  @see org.scalaml.scalability.akka.Controller
  *
  *  @author Patrick Nicolas
- *  @since March 30, 2014
- *  @see Scala for Machine Learning Chapter 12 Scalable Frameworks/Master-workers
+ *  @since 0.98. 1March 30, 2014
+ *  @see Scala for Machine Learning Chapter 16 Parallelism with Scala and Akka
+ *  @version 0.99.2
  */
 abstract private[scalaml] class Master(
     xt: DblVec,
@@ -67,11 +68,9 @@ abstract private[scalaml] class Master(
   /**
    * Message processing handler of the master actor for a distributed transformation of
    * time series.
-   *
-   * - '''Start''' to partition the original time series and launch data transformation on
+   * - Start to partition the original time series and launch data transformation on
    * worker actors
-   *
-   * - '''Completed''' aggregates the results from all the worker actors.
+   * - Completed aggregates the results from all the worker actors.
    */
   override def receive = {
     // Partition the original time series

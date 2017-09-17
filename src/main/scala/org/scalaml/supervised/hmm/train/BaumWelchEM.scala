@@ -10,7 +10,7 @@
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *
  * The source code in this file is provided by the author for the sole purpose of illustrating the
- * concepts and algorithms presented in "Scala for Machine Learning".
+ * concepts and algorithms presented in "Scala for Machine Learning 2nd edition".
  * ISBN: 978-1-783355-874-2 Packt Publishing.
  *
  * Version 0.99.2
@@ -45,6 +45,7 @@ import LoggingUtils._
  *  @note Scala for Machine Learning Chapter 7 Sequential data models / Hidden Markov Model /
  *  Training
  */
+@throws(classOf[IllegalArgumentException])
 final private[scalaml] class BaumWelchEM protected (
     config: HMMConfig,
     obsSeq: Vector[Int]

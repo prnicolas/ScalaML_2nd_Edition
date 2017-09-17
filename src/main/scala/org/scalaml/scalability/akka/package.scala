@@ -10,7 +10,7 @@
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *
  * The source code in this file is provided by the author for the sole purpose of illustrating the
- * concepts and algorithms presented in "Scala for Machine Learning".
+ * concepts and algorithms presented in "Scala for Machine Learning 2nd edition".
  * ISBN: 978-1-783355-874-2 Packt Publishing.
  *
  * Version 0.99.2
@@ -35,9 +35,8 @@ package org.scalaml.scalability
  * - Implementation of futures with callback to the client actor to distribute the
  *  computation of the Discrete Fourier transform'''TransformFuturesClbck'''
  *
- * @see Scala for Machine Learning Chapter 12 Scalable frameworks
- * @note The name of the Akka actor routing protocol has been changed in version 2.3.
- * @note The version of Akka library has to be compatible with the version of Apache Spark.
+ * @see Scala for Machine Learning Chapter 16 Parallelism with Scala and akka
+ * @note The name of the Akka actor routing protocol has been changed in version 2.3.x
  */
 package object akka {}
 // ---------------------------------------  EOF -----------------------------------------

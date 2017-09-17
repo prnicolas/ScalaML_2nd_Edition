@@ -10,7 +10,7 @@
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *
  * The source code in this file is provided by the author for the sole purpose of illustrating the
- * concepts and algorithms presented in "Scala for Machine Learning".
+ * concepts and algorithms presented in "Scala for Machine Learning 2nd edition".
  * ISBN: 978-1-783355-874-2 Packt Publishing.
  *
  * Version 0.99.2
@@ -24,7 +24,7 @@ package org.scalaml.supervised
  * '''org.scalam.supervised.regression.linear'''
  *
  * - Logistic regression '''org.scalam.supervised.regression.logistic'''
- * @see Scala for Machine Learning Chapter 6 ''Regression and Regularization''
+ * @see Scala for Machine Learning Chapter 9 ''Regression and Regularization''
  */
 package object regression {}
 // ---------------------------------------  EOF -----------------------------------------

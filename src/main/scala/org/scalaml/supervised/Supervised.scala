@@ -10,7 +10,7 @@
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *
  * The source code in this file is provided by the author for the sole purpose of illustrating the
- * concepts and algorithms presented in "Scala for Machine Learning".
+ * concepts and algorithms presented in "Scala for Machine Learning 2nd edition".
  * ISBN: 978-1-783355-874-2 Packt Publishing.
  *
  * Version 0.99.2
@@ -25,6 +25,7 @@ import org.scalaml.core.ITransform
  * Trait that defined the interface to supervised learning algorithm.
  * The trait requires developers to create a validation routine for parameterized
  * multidimensional time series of tuple (observation, class label).
+ * @author Patrick Nicolas
  * @tparam T Type of elements in the time series
  * @tparam V Type of element in the labeled data
  * @see Scala for Machine Learning

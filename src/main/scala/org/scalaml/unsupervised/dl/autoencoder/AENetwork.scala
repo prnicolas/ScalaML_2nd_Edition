@@ -10,20 +10,26 @@
   * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   *
   * The source code in this file is provided by the author for the sole purpose of illustrating the
-  * concepts and algorithms presented in "Scala for Machine Learning".
+  * concepts and algorithms presented in "Scala for Machine Learning 2nd edition".
   * ISBN: 978-1-783355-874-2 Packt Publishing.
   *
   * Version 0.99.2
   */
 package org.scalaml.unsupervised.dl.autoencoder
 
-import org.scalaml.supervised.mlp.{MLPConnection, MLPModel}
 import AE._
 import org.scalaml.stats.TSeries.zipWithShift1
 import org.scalaml.supervised.mlp.{MLPConnection, MLPModel, MLPNetwork}
 
+
 /**
-  *
+  * @author Patrick Nicolas
+  * @param config Configuration parameters for the AE model
+  * @param topology Topology {input, hidden and output layer} for the AE model
+  * @param model if the AE has already been created
+  * @version 0.99.2
+  * @see Scala for Machine Learning Chapter 11 Deep learning / Auto-encoder
+  * @see org.scalaml.supervised.nnet.mlp.MLPNetwork
   */
 private[scalaml] final class AENetwork protected (
   config: AEConfig,

@@ -10,7 +10,7 @@
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *
  * The source code in this file is provided by the author for the sole purpose of illustrating the
- * concepts and algorithms presented in "Scala for Machine Learning".
+ * concepts and algorithms presented in "Scala for Machine Learning 2nd edition".
  * ISBN: 978-1-783355-874-2 Packt Publishing.
  *
  * Version 0.99.2
@@ -38,8 +38,9 @@ import org.scalaml.core.Design.Config
  * @author Patrick Nicolas
  * @since 0.98.1 May 7, 2014
  * @version 0.99.2
- * @note Scala for Machine Learning Chapter 10 Multilayer perceptron
+ * @see Scala for Machine Learning Chapter 10 Multilayer perceptron
  */
+@throws(classOf[IllegalArgumentException])
 private[scalaml] class MLPConfig(
     val alpha: Double,
     val eta: Double,

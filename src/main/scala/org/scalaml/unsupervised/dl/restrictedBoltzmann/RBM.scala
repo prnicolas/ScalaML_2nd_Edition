@@ -10,7 +10,7 @@
   * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   *
   * The source code in this file is provided by the author for the sole purpose of illustrating the
-  * concepts and algorithms presented in "Scala for Machine Learning".
+  * concepts and algorithms presented in "Scala for Machine Learning 2nd edition".
   * ISBN: 978-1-783355-874-2 Packt Publishing.
   *
   * Version 0.99.2
@@ -26,12 +26,16 @@ import scala.util.Try
 
 /**
   * Definition of the binary restricted Boltzmann machine
+  * @author Patrick Nicolas
+  * @version 0.99.2
   * @param numInputs  Number of features or input neurons
   * @param numLatents  Size of the representation layer
   * @param config Configuration of the Restricted Boltzmann Machine
   * @param nSamples Number of samples to be generated for each of the conditional probability
   * @tparam T  Type contextually bound to a Double type
+  * @see Scala for Machine Learning Chapter 11 Deep learning/ Restricted Boltzmann Machine
   */
+@throws(classOf[IllegalArgumentException])
 private[scalaml] class RBM[@specialized(Double) T: ToDouble](
     numInputs: Int,
     numLatents: Int,
@@ -39,6 +43,10 @@ private[scalaml] class RBM[@specialized(Double) T: ToDouble](
     nSamples: Int,
     input: Array[Array[T]]) extends ITransform[Array[T], Array[Double]] {
   import org.scalaml.stats.Stats._, RBM._
+
+  require(input.size > 1, "Cannot execute RBM on undefined dataset")
+  require(numInputs > 0, s"Cannot execute RBM with $numInputs inputs")
+  require(numLatents > 0, s"Cannot execute RBM with $numLatents latent/hidden variables")
 
   @inline
   final def isModel: Boolean = model.isDefined

@@ -10,7 +10,7 @@
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *
  * The source code in this file is provided by the author for the sole purpose of illustrating the
- * concepts and algorithms presented in "Scala for Machine Learning".
+ * concepts and algorithms presented in "Scala for Machine Learning 2nd edition".
  * ISBN: 978-1-783355-874-2 Packt Publishing.
  *
  * Version 0.99.2
@@ -20,11 +20,9 @@ package org.scalaml.scalability
 /**
  * This package object encapsulates the evaluation of the performance of the following
  * Scala parallel collections:
- *
  * - Parallel arrays '''ParArrayBenchmark'''
- *
  * - Parallel Maps/HashMaps '''ParMapBenchmark'''
- * @see Scala for Machine Learning Chapter 12 ''Scalable frameworks'' / Scala parallel collections
+ * @see Scala for Machine Learning Chapter 16 Parallelism with Scala and Akka
  */
 package object scala {}
 // ---------------------------------------  EOF -----------------------------------------

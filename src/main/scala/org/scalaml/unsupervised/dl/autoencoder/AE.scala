@@ -10,7 +10,7 @@
   * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   *
   * The source code in this file is provided by the author for the sole purpose of illustrating the
-  * concepts and algorithms presented in "Scala for Machine Learning".
+  * concepts and algorithms presented in "Scala for Machine Learning 2nd edition".
   * ISBN: 978-1-783355-874-2 Packt Publishing.
   *
   * Version 0.99.2
@@ -61,6 +61,7 @@ final private[scalaml] class AE[@specialized(Double) T: ToDouble] protected (
     xt: Vector[Array[T]]) extends ITransform[Array[T], Array[Double]] with Monitor[Double] {
   import AE._
 
+  require(xt.size > 0, "Autoencoder cannot process undefined data set")
   protected val logger = Logger.getLogger("AE")
   /**
     * Initializes the topology of this multi-layer perceptron starting
@@ -80,6 +81,7 @@ final private[scalaml] class AE[@specialized(Double) T: ToDouble] protected (
     */
   val model: Option[MLPModel] =  {
     import Shuffle._, Math._
+
     val network = AENetwork(config, topology)
     var prevErr = Double.MaxValue
 

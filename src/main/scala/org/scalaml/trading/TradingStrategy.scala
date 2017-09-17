@@ -10,7 +10,7 @@
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *
  * The source code in this file is provided by the author for the sole purpose of illustrating the
- * concepts and algorithms presented in "Scala for Machine Learning".
+ * concepts and algorithms presented in "Scala for Machine Learning 2nd edition".
  * ISBN: 978-1-783355-874-2 Packt Publishing.
  *
  * Version 0.99.2
@@ -35,6 +35,7 @@ import org.scalaml.Predef.DblVec
  * @version 0.99.2
  * @see Scale for Machine Learning Appendix/Finances 101
  */
+@throws(classOf[IllegalArgumentException])
 private[trading] case class TradingStrategy(name: String = "", signals: List[Signal]) {
   require(signals.nonEmpty, s"TradingStrategy The list of signals is undefined")
 }
@@ -53,8 +54,9 @@ private[trading] case class TradingStrategy(name: String = "", signals: List[Sig
  * @author Patrick Nicolas
  * @since 0.98.1 May 7, 2014
  * @version 0.99.2
- * @note Scala for Machine Learning Chapter 13: Evolutionary Computing
+ * @see Scala for Machine Learning Chapter 13: Evolutionary Computing
  */
+@throws(classOf[IllegalArgumentException])
 protected class StrategyFactory(nSignals: Int)
       (implicit quant: Quantization[Double], encoding: Encoding) {
   require(nSignals > 0, s"StrategyFactory Number of signals $nSignals should be >0")

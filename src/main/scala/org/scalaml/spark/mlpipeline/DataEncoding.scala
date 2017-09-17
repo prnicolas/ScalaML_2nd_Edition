@@ -10,7 +10,7 @@
   * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   *
   * The source code in this file is provided by the author for the sole purpose of illustrating the
-  * concepts and algorithms presented in "Scala for Machine Learning".
+  * concepts and algorithms presented in "Scala for Machine Learning 2nd edition".
   * ISBN: 978-1-783355-874-2 Packt Publishing.
   *
   * Version 0.99.2
@@ -21,15 +21,17 @@ import org.apache.spark.ml.PipelineStage
 import org.apache.spark.ml.feature.{OneHotEncoder, StringIndexer, VectorAssembler}
 
 /**
-  * Feature encoding
+  * Feature encoding using Apache Spark ML Pipelines
+  * @author Patick Nicolas
+  * @version 0.99.2
   */
 private[spark] trait DataEncoding {
   protected[this] val colNames: Array[String]
   private[this] lazy val vectorizedColNames = colNames.map(vector(_))
+
   /**
     * Create a pipeline of Spark transformation related to indexing, encoding and assembling features
     */
-
   lazy val stages: Array[PipelineStage] =
     colNames.map(col => new StringIndexer().setInputCol(col).setOutputCol(index(col))) ++
       colNames.map(col => new OneHotEncoder().setInputCol(index(col)).setOutputCol(vector(col))) ++

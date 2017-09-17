@@ -10,7 +10,7 @@
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *
  * The source code in this file is provided by the author for the sole purpose of illustrating the
- * concepts and algorithms presented in "Scala for Machine Learning".
+ * concepts and algorithms presented in "Scala for Machine Learning 2nd edition".
  * ISBN: 978-1-783355-874-2 Packt Publishing.
  *
  * Version 0.99.2
@@ -64,6 +64,7 @@ import LoggingUtils._, CrfAdapter._
  * @see Scala for Machine Learning Chapter 7 "Sequential data models" / Conditional Random Fields.
  * @see org.scalaml.core.ITransform
  */
+@throws(classOf[IllegalArgumentException])
 final private[scalaml] class  Crf(
     nLabels: Int,
     config: CrfConfig,

@@ -10,7 +10,7 @@
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *
  * The source code in this file is provided by the author for the sole purpose of illustrating the
- * concepts and algorithms presented in "Scala for Machine Learning".
+ * concepts and algorithms presented in "Scala for Machine Learning 2nd edition".
  * ISBN: 978-1-783355-874-2 Packt Publishing.
  *
  * Version 0.99.2
@@ -79,6 +79,7 @@ final private[scalaml] class HMMModel protected (
    * @return The matrix of alpha values.
    * @throws IllegalArgumentException if obsSeqNum is undefined
    */
+  @throws(classOf[IllegalArgumentException])
   def setAlpha(obsSeq: Vector[Int]): DMatrix = {
     require(
       obsSeq.length > 1,
@@ -95,6 +96,7 @@ final private[scalaml] class HMMModel protected (
    * @return updated alpha value
    * @throws IllegalArgumentException if index i or obsIndex are out of range.
    */
+  @throws(classOf[IllegalArgumentException])
   final def getAlphaVal(a: Double, i: Int, obsId: Int): Double = {
     require(
       i >= 0 && i < numStates,
@@ -137,6 +139,7 @@ final private[scalaml] class HMMModel protected (
    * @throws IllegalArgumentException if the HMM parameters are undefined or the sequence
    * of observations is undefined.
    */
+  @throws(classOf[IllegalArgumentException])
   def update(gamma: Gamma, diGamma: DiGamma, obsSeq: Vector[Int]): Unit = {
     require(
       obsSeq.length > 1,
@@ -196,8 +199,9 @@ final private[scalaml] class HMMModel protected (
 /**
  * Companion for the HMMModel class to define the constructors of the class HMMModel.
  * @author Patrick Nicolas
- * @since March 6, 2014
- * @note Scala for Machine Learning Chapter 7 Sequential data models/Hidden Markov Model
+ * @since 0.98.1 March 6, 2014
+ * @version 0.99.2
+ * @see Scala for Machine Learning Chapter 7 Sequential data models/Hidden Markov Model
  */
 private[scalaml] object HMMModel {
 
@@ -210,6 +214,7 @@ private[scalaml] object HMMModel {
    * @param symbolsSeq Sequence of the values of the symbols  (as a sequence of floating
    * point values)
    */
+  @throws(classOf[IllegalArgumentException])
   def apply(statesSeq: Seq[Array[Double]], symbolsSeq: Seq[Array[Double]]): HMMModel = {
     require(
       statesSeq.nonEmpty,

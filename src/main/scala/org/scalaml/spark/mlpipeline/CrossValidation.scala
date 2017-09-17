@@ -10,7 +10,7 @@
   * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   *
   * The source code in this file is provided by the author for the sole purpose of illustrating the
-  * concepts and algorithms presented in "Scala for Machine Learning".
+  * concepts and algorithms presented in "Scala for Machine Learning 2nd edition".
   * ISBN: 978-1-783355-874-2 Packt Publishing.
   *
   * Version 0.99.2
@@ -33,7 +33,7 @@ import org.apache.spark.sql._
   *
   * @author Patrick Nicolas
   * @since 0.99.2  Dec 11, 2016
-  * @see Scala for Machine Learning 2nd Edition - Chap 17 - Apache Spark
+  * @see Scala for Machine Learning 2nd Edition - Chap 17 - Apache Spark MLlib
   * @tparam T Type of the model to be cross-validated
   */
 private[spark] trait CrossValidation[T <: Model[T]] extends ModelEstimator[T] {
@@ -43,15 +43,19 @@ private[spark] trait CrossValidation[T <: Model[T]] extends ModelEstimator[T] {
   protected[this] val numFolds: Int
 
   /**
-    * @param grid
-    * @param stages
-    * @return
+    * @param grid Grid used in the plan for cross validation model
+    * @param stages Sequence of transform or stages in the pipeline
+    * @return A cross validation model
     */
+  @throws(classOf[IllegalArgumentException])
   protected def apply(
     trainDf: DataFrame,
     stages: Array[PipelineStage],
     grid: Array[ParamMap]
   ): CrossValidatorModel = {
+    require(stages.size > 0, "Cannot cross-validate pipeline without stages")
+    require(grid.size > 0, "Cannot cross-validate with undefined grid")
+
     val pipeline = new Pipeline().setStages(stages ++ Array[PipelineStage](estimator))
     new CrossValidator()
       .setEstimator(pipeline)

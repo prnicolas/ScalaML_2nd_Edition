@@ -10,7 +10,7 @@
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *
  * The source code in this file is provided by the author for the sole purpose of illustrating the
- * concepts and algorithms presented in "Scala for Machine Learning".
+ * concepts and algorithms presented in "Scala for Machine Learning 2nd edition".
  * ISBN: 978-1-783355-874-2 Packt Publishing.
  *
  * Version 0.99.2
@@ -25,7 +25,7 @@ package org.scalaml.supervised
  * - Multi-class Naive Bayes classifier '''MultiNaiveBayesModel'''
  *
  * - Computation of class likelihood and priors'''NaiveBayesLikelihood'''
- * @see Scala for Machine Learning Chapter 5 ''Naive Bayes models'' / Naive Bayes classifiers
+ * @see Scala for Machine Learning Chapter 6 ''Naive Bayes models'' / Naive Bayes classifiers
  */
 package object bayes {}
 // ---------------------------------------  EOF -----------------------------------------

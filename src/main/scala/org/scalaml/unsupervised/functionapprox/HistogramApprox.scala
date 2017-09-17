@@ -10,7 +10,7 @@
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *
  * The source code in this file is provided by the author for the sole purpose of illustrating the
- * concepts and algorithms presented in "Scala for Machine Learning".
+ * concepts and algorithms presented in "Scala for Machine Learning 2nd edition".
  * ISBN: 978-1-783355-874-2 Packt Publishing.
  *
  * Version 0.99.2
@@ -31,14 +31,14 @@ import scala.collection._
  * - range of input data
  * - the underlying model is continous
  * - the Input data is ordered or is a time series
- *
+ * @author Patrick Nicolas
  * @param numBins Number of bins
  * @param input Input multi-dimension data of type T with a value of y
  * @author Patrick Nicolas
  * @since 0.99.2 Jan 11, 2017
  * @version 0.99.2
- * @note Scala for Machine Learning - Chapter 4 Unsupervised learning - Function approximation
  */
+@throws(classOf[IllegalArgumentException])
 final private[scalaml] class HistogramApprox[T: ToDouble](
     numBins: Int,
     input: Array[(T, Double)]

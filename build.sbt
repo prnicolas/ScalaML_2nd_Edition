@@ -1,6 +1,6 @@
 organization := "Patrick Nicolas"
 
-name := "ScalaMl"
+name := "ScalaML-2"
 
 version := "0.99.2"
 
@@ -13,7 +13,7 @@ libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-core" % "2.1.0",
   "org.apache.spark" %% "spark-mllib" % "2.1.0",
   "org.apache.spark" %% "spark-streaming" % "2.1.0",
-  "org.scalatest" %% "scalatest" % "3.0.1"
+  "org.scalatest" %% "scalatest" % "2.2.6"
 )
 
 // Resolver for Apache Spark framework

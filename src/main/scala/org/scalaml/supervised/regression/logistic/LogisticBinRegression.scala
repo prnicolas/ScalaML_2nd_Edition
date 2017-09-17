@@ -10,7 +10,7 @@
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *
  * The source code in this file is provided by the author for the sole purpose of illustrating the
- * concepts and algorithms presented in "Scala for Machine Learning".
+ * concepts and algorithms presented in "Scala for Machine Learning 2nd edition".
  * ISBN: 978-1-783355-874-2 Packt Publishing.
  *
  * Version 0.99.2
@@ -75,7 +75,7 @@ case class LogBinRegressionModel(weights: Features, losses: List[Double]) {
  * classifiers
  * @note This is a simplified version of the logistic regression is presented to illustrate
  * the application. of a machine learning algorithm in chapter 1. A formal implementation of
- * the logistic regression (chap 6)  is defined in class LogisticRegression
+ * the logistic regression (chap 9)  is defined in class LogisticRegression
  * @see org.scalaml.supervised.regression.logistics.LogisticRegression
  */
 @throws(classOf[IllegalArgumentException])

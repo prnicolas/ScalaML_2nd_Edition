@@ -10,7 +10,7 @@
   * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   *
   * The source code in this file is provided by the author for the sole purpose of illustrating the
-  * concepts and algorithms presented in "Scala for Machine Learning".
+  * concepts and algorithms presented in "Scala for Machine Learning 2nd edition".
   * ISBN: 978-1-783355-874-2 Packt Publishing.
   *
   * Version 0.99.2
@@ -24,14 +24,19 @@ import RBM._
 
 /**
   * Computation of the sampling of likelihood using an activation function
+  * @author Patrick Nicolas
+  * @version 0.99.2
   * @param weights Connection weights
   * @param sampleSize Number of samples extracted from conditional probabilities
+  * @see Scala for Machine Learning Chapter 11 Deep learning/ Restricted Boltzmann Machine
   */
 private[scalaml] final class SCondProb(weights: Weights, sampleSize: Int) {
 
   /**
     * Compute the raw conditional probability p(h|v)
+    * @param h input for the conditional probability
     */
+  @throws(classOf[IllegalArgumentException])
   def probHV(h: Array[Double]): IndexedSeq[Double] = {
     require(h.size == weights.size -1, "Incorrect number of hidden nodes")
 
@@ -43,6 +48,7 @@ private[scalaml] final class SCondProb(weights: Weights, sampleSize: Int) {
   /**
     * Compute the raw conditional probability p(v|h)
     */
+  @throws(classOf[IllegalStateException])
   def probVH(v: Array[Double]): IndexedSeq[Double] = {
       // Transpose the original matrix of weights.
     val tWeights = weights.transpose

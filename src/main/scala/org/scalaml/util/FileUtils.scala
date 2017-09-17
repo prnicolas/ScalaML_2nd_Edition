@@ -10,7 +10,7 @@
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *
  * The source code in this file is provided by the author for the sole purpose of illustrating the
- * concepts and algorithms presented in "Scala for Machine Learning".
+ * concepts and algorithms presented in "Scala for Machine Learning 2nd edition".
  * ISBN: 978-1-783355-874-2 Packt Publishing.
  *
  * Version 0.99.2
@@ -25,8 +25,9 @@ import scala.util.{Failure, Success, Try}
 /**
  * Basic utility singleton to read and write content from and to a file
  * @author Patrick Nicolas
- * @since December 2, 2013
- * @note Scala for Machine Learning
+ * @since 0.98 December 2, 2013
+ * @see Scala for Machine Learning
+ *  @version 0.99.2
  */
 private[scalaml] object FileUtils {
   private val logger = Logger.getLogger("FileUtils")

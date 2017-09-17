@@ -1,4 +1,4 @@
-<b>Scala for Machine Learning</b> Version <b>0.99.2</b><br>
+<b>Scala for Machine Learning</b> Version <b>0.99.2</b> September 7, 2017<br>
 Copyright Patrick Nicolas All rights reserved 2013-2017<br>
 =================================================================<br>
 <br>
@@ -36,21 +36,20 @@ Here is the list of changes introduced in version 0.99.2 and described in "<i>Sc
 <br>
 <h3>New Chapters</h3>
 <ul>
-<li>Dimension Reduction</li>
-<li>Deep Learning</li>
-<li>Monte Carlo Inference</li>
-<li>Multi-armed bandit</li>
-<li>Apache Spark MLlib</li>
+<li>Chapter 5 - Dimension Reduction</li>
+<li>Chapter 8 - Monte Carlo Inference</li>
+<li>Chapter 11 - Deep Learning</li>
+<li>Chapter 14 - Multi-armed bandit</li>
+<li>Chapter 17 - Apache Spark MLlib</li>
 </ul>
 <br>
 <br>
 <h2 id="Documentation">Documentation</h2>
 The best approach to learn about any particular learning algorithm is to
 <ul>
-<li>Read the appropriate chapter (i.e. <i>Chapter 5: Naive Bayes modelsM</i>)</li>
+<li>Read the appropriate chapter (i.e. <i>Chapter 6: Naive Bayes Classifier</i>)</li>
 <li>Review source code guidelines used in the book <i>SourceCodeGuide.html</i></li>
-<li>Review scaladoc in <i>scala_2.11-0.99-sources.jar</i> or <i>scala_2.10-0.99-sources.jar</i> depending on the version of Scala you are using.</li>
-<li>Look at the examples related to the chapter (i.e. <i>org/scalaml/app/chap5/Chap5</i>)</li>
+<li>Look at the examples related to the chapter (i.e. <i>org/scalaml/supervised/bayes</i>)</li>
 <li>Browse through the implementation code (i.e. <i>org/scalaml/supervised/bayes</i>)</li>
 </ul>
 <h2 id="requirements">Minimum Requirements</h2>
@@ -58,7 +57,7 @@ The best approach to learn about any particular learning algorithm is to
 4 CPU Core and 8+ Gbytes RAM for datasets of size 75,000 or larger and/or with 50 features set or larger
 <br>
 <b>Operating system</b>: None<br>
-<b>Software</b>: JDK 1.7.0_45 or 1.8.0_25, Scala 2.10.4 (for Apache Spark) or 2.11.2 (for Akka) and SBT 0.13+ (see installation section for deployment.<br>
+<b>Software</b>: JDK 1.8.0_25 or later, Scala 2.11.2 or later, and SBT 0.13+ (see installation section for deployment.<br>
 
 <h2 id="history">History</h2>
 <h4>0.99.1 (12/17/2015)</h4>
@@ -124,8 +123,8 @@ Directory structure of the source code of the examples for <i>Scala for Machine 
 <h3 id="installation">Installation</h3>
 The installation and build workflow is described in the following diagram:<br>
 <img src="images/8742OS_installation.png" alt="Installation and build"><br>
-<b>Eclipse</b>
-The Scala for Machine Learning library is compatible with IntelliJ IDEA 2.15-2.17 and Eclipse Scala IDE 3.0 & 4.0<br>
+<b>Eclipse & IntelliJ IDEA</b>
+The Scala for Machine Learning library is compatible with IntelliJ IDEA 2016 & 2017 and Eclipse Scala IDE 4.0<br>
 Specify link to the source in <i>Project/properties/Java Build Path/Source</i>. The two links should be <i>project_name/src/main/scala</i> and <i>project_name/src/test/scala</i><br>
 Add the jars required to build and execute the code within Eclipse <i>Project/properties/Java Build Path/Add External Jars</i>as declared in the <i>project_name/.classpath</i><br>
 Update the JVM heap parameters in eclipse.ini file as <i>-Xms512m -Xmx8192m</i> or the maximum allowed on your specific machine.
@@ -184,7 +183,7 @@ junit-4.11.jar<br>
 <b>Scala 2.11.8 related libraries</b><br>
 com.typesafe/config/1.2.2/bundles/config.jar<br>
 akka-actor_2.11-2.3.8.jar<br>
-scalatest_3.0.1.jar<br>
+scalatest_2.2.6.jar<br>
 spark-assembly-2.1.0-hadoop2.7.0.jar<br>
 <br>
 ===========================================

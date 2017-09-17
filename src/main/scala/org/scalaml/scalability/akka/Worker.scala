@@ -10,7 +10,7 @@
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *
  * The source code in this file is provided by the author for the sole purpose of illustrating the
- * concepts and algorithms presented in "Scala for Machine Learning".
+ * concepts and algorithms presented in "Scala for Machine Learning 2nd edition".
  * ISBN: 978-1-783355-874-2 Packt Publishing.
  *
  * Version 0.99.2
@@ -34,8 +34,9 @@ import FormatUtils._, Controller._, LoggingUtils._
  * @param fct Data transformation function to be applied to a time series.
  *
  * @author Patrick Nicolas
- * @since March 24, 2014
- * @note Scala for Machine Learning Chapter 12 Scalable Framework/Akka/Master-workers
+ * @since 0.98.1 March 24, 2014
+ * @see Scala for Machine Learning Chapter 16 Parallelism with Scala and Akka
+ * @version 0.99.2
  */
 final private[scalaml] class Worker(id: Int, fct: PfnTransform) extends Actor with Monitor[Double] {
   import Worker._
@@ -77,8 +78,9 @@ final private[scalaml] class Worker(id: Int, fct: PfnTransform) extends Actor wi
  * the parameters of the Worker class
  *
  * @author Patrick Nicolas
- * @since March 24, 2014
- * @note Scala for Machine Learning Chapter 12 Scalable Framework/Akka/Master-workers
+ * @since 0.98.1 March 24, 2014
+ * @see Scala for Machine Learning Chapter 16 Parallelism with Scala and Akka
+ * @version 0.99.2
  */
 private[scalaml] object Worker {
   private def check(id: Int): Unit = require(id >= 0, s"Worker.check Id $id is out of range")

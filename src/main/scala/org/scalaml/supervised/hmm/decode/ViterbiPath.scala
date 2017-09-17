@@ -10,7 +10,7 @@
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *
  * The source code in this file is provided by the author for the sole purpose of illustrating the
- * concepts and algorithms presented in "Scala for Machine Learning".
+ * concepts and algorithms presented in "Scala for Machine Learning 2nd edition".
  * ISBN: 978-1-783355-874-2 Packt Publishing.
  *
  * Version 0.99.2
@@ -67,7 +67,7 @@ final protected class ViterbiPath(lambda: HMMModel, obsSeq: Vector[Int]) {
    * Pair (prob, states_sequence) where states_sequence is the
    * the most likely sequence of states given a Lambda model and a sequence
    * of observations, and prob its likelihood. The states of sequence uses a tail recursion.
-   * The method uses the notation introduced in "Scala for Machine Learning"
+   * The method uses the notation introduced in "Scala for Machine Learning 2nd edition"
    * and "Introduction to Machine Learning" by E. Alpaydin.
    */
   val path: HMMPrediction = {
