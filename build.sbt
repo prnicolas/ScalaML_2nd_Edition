@@ -1,6 +1,6 @@
 organization := "Patrick Nicolas"
 
-name := "ScalaML-2"
+name := "Scala for Machine Learning - 2nd Edition"
 
 version := "0.99.2"
 

@@ -6,7 +6,7 @@
     <packaging>jar</packaging>
     <description>Scala for Machine Learning</description>
     <version>0.99.2</version>
-    <name>ScalaMl</name>
+    <name>Scala for Machine Learning - 2nd Edition</name>
     <organization>
         <name>Patrick Nicolas</name>
     </organization>
