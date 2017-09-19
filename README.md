@@ -42,11 +42,10 @@ Here is the list of changes introduced in version 0.99.2 and described in "<i>Sc
 <li>Chapter 17 - Apache Spark MLlib</li>
 </ul>
 <br>
-<br>
 <h2 id="Documentation">Documentation</h2>
 The best approach to learn about any particular learning algorithm is to
 <ul>
-<li>Read the appropriate chapter (i.e. <i>Chapter 6: Naive Bayes Classifier</i>)</li>
+<li>Read the appropriate chapter (i.e. <i>Chapter 6: Naive Bayes Classifiers</i>)</li>
 <li>Review source code guidelines used in the book <i>SourceCodeGuide.html</i></li>
 <li>Look at the examples related to the chapter (i.e. <i>org/scalaml/supervised/bayes</i>)</li>
 <li>Browse through the implementation code (i.e. <i>org/scalaml/supervised/bayes</i>)</li>
@@ -60,8 +59,7 @@ The best approach to learn about any particular learning algorithm is to
 
 <h2 id="installationbuild">Installation and Build</h2>
 <h3 id="installation">Installation</h3>
-The installation and build workflow is described in the following diagram:<br>
-<img src="images/8742OS_installation.png" alt="Installation and build"><br>
+<br>
 <b>Eclipse & IntelliJ IDEA</b>
 The Scala for Machine Learning library is compatible with IntelliJ IDEA 2016 & 2017 and Eclipse Scala IDE 4.0<br>
 Specify link to the source in <i>Project/properties/Java Build Path/Source</i>. The two links should be <i>project_name/src/main/scala</i> and <i>project_name/src/test/scala</i><br>
@@ -72,7 +70,7 @@ Update the JVM heap parameters in eclipse.ini file as <i>-Xms512m -Xmx8192m</i> 
 <h4>build.sbt</h4>
 The Simple Build Too (SBT) has to be used to build the library from the source code using the <i>build.sbt</i> file in the root directory<br>
 Executing the examples/test in Scala for Machine Learning require sufficient JVM Heap memory (~2G):<br>
-in <i>sbt/conf/sbtconfig.text</i> set Xmx to 2058m or higher, -XX:MaxPermSize to 512m or higher i.e. <b>-Xmx4096m -Xms512m -XX:MaxPermSize=512m</b><br><br>
+in <i>sbt/conf/sbtconfig.text</i> set Xmx to 8192m or higher, -XX:MaxPermSize to 512m or higher i.e. <b>-Xmx8192m -Xms1024m -XX:MaxPermSize=512m</b><br><br>
 Build script for <i>Scala for Machine Learning</i>:<br>
 To build the Scala for Machine Learning library package<br><i><b> $(ROOT)/sbt clean publish-local</b></i><br>
 To build the package including test and resource files<br><i><b> $(ROOT)/sbt clean package</b></i><br>
