@@ -6,7 +6,6 @@ Copyright Patrick Nicolas All rights reserved 2013-2017<br>
 <a href="#latestRelease">Latest releases</a><br>
 <a href="#documentation">Documentation</a><br>
 <a href="#requirements">Minimum requirements</a><br>
-<a href="#history">History</a><br>
 <a href="#project">Project</a><br>
 <a href="#installation">installation</a><br>
 <a href="#build">build</a><br>
@@ -57,67 +56,7 @@ The best approach to learn about any particular learning algorithm is to
 4 CPU Core and 8+ Gbytes RAM for datasets of size 75,000 or larger and/or with 50 features set or larger
 <br>
 <b>Operating system</b>: None<br>
-<b>Software</b>: JDK 1.8.0_25 or later, Scala 2.11.2 or later, and SBT 0.13+ (see installation section for deployment.<br>
-
-<h2 id="history">History</h2>
-<h4>0.99.1 (12/17/2015)</h4>
-See <a href="#latestRelease">Latest release</a><br>
-<h4>0.99 (10/30/2015)</h4>
-<ul>
- <li>Broader uses of higher order method such as <i>aggregate</i>, <i>collect</i>, <i>partition</i>, <i>groupBy</i> ... </li>
- <li>Strict monadic encoding of data transformation from an explicit model, and data transformation from a model derived from a training set. </li>
- <li>Correction and update of documentation for some statistical formulas.</li>
- <li>Reimplementation of training of logistic regression, Q-Learning and hidden Markov and execution of genetic algorithm using tail recursion</li>
- <li>Implementation of magnet pattern for overloaded methods with different return types</li>
- <li>Definition of covariant and contravariant functors</li>
- <li>Fix bugs in training of Multilayer perceptron</li>
- <li>Generic monitoring class for profiling execution of optimizers</li>
- <li>Introduction of monadic kernel functions with a test case</li>
- <li>Introduction to manifolds</li>
- <li>Introduction to Convolution Neural Networks</li>
- <li>Fisher-Yates shuffle for stochastic and batched gradient descent</li>
- <li>Implementation of 1-fold and K-fold cross-validation</li>
- <li>Standardization of the application of tail recursion for dynamic programming algorithms</li>
- <li>Uses of views to reduce uncessary generation of intermediate objects in processing pipeline</li>
- <li>Introduction to streams in Chapter 12 with example and test code</li>
-  <li>Stricter adherence to coding convention for <i>implicits</i>, <i>traits</i>, <i>abstract classes</i></li>
- <li>Improved scaladoc documentation</li>
- <li>Added support for Scala 2.11.2, Akka 2.3.4 and Apache Spark 1.5.0 (with Scala 2.10.4)</li>
- </ul>
-<h4>0.98.2 (03/19/2015)</h4>
-<ul>
-<li>Fixes bugs with SVR and hidden Markov model - Decoding</li>
-<li>Expand the number of test/evaluations from 60 to 66</li>
-</ul>
-<h4>0.98.1 (02/14/2015)</h4>
-<ul>
-<li>Added function minimization as a test case for Genetic algorithms</li>
-<li>Added monitoring callback for reproduction cycle of the genetic algorithm and update implementation of trading signals</li>
-<li>Standardized string representation of collection using mkString</li>
-<li>Added plots to the performance benchmark of parallel collection (Chap. 12)</li>
-<li>Simplified and re-implemented the Viterbi algorithm (HMM - decoding) as a tail recursion and normalize lambda probabilities matrices</li>
-<li>Expanded scaladocs with reference to the chapters of "Scala for Machine Learning"</li>
-<li>Replace some enumeration by case classes</li>
-<li>Added scalastyle options</li>
-</ul>
-<h4>0.98 (12/02/2014)</h4>
-<ul>
-<li>Added comments to test cases</li>
-<li>Add<li>ed <i>Scala source guide</i></li>
-<li>Wrapped Scalatest routines into futures</li>
-<li>Expand the number of test/evaluations from 39 to 60</li>
-</ul>
-<h4>0.97 (06/12/2014)</h4>
-Initial implementation<br>
-
-<h2 id="project">Project Components</h2>
-Directory structure of the source code library for <i>Scala for Machine Learning</i>:<br>
-<img src="images/8742OS_libsourcecode.png" alt="Source code"><br>
-<br>
-Directory structure of the source code of the examples for <i>Scala for Machine Learning</i>:<br>
-<img src="images/8742OS_examples.png" alt="Examples"><br>
-<br>
-
+<b>Software</b>: JDK 1.8.0_25 or later, Scala 2.11.2 or later (2.11.8) recommended, and SBT 0.13+ (see installation section for deployment.<br>
 
 <h2 id="installationbuild">Installation and Build</h2>
 <h3 id="installation">Installation</h3>
