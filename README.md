@@ -76,6 +76,7 @@ in <i>sbt/conf/sbtconfig.text</i> set Xmx to 2058m or higher, -XX:MaxPermSize to
 Build script for <i>Scala for Machine Learning</i>:<br>
 To build the Scala for Machine Learning library package<br><i><b> $(ROOT)/sbt clean publish-local</b></i><br>
 To build the package including test and resource files<br><i><b> $(ROOT)/sbt clean package</b></i><br>
+To run the examples <br><i><b> $(ROOT)/sbt clean test</b></i><br>
 To generate scala doc for the library<br><i><b> $(ROOT)/sbt doc</b></i><br>
 To generate scala doc for the examples<br><i><b> $(ROOT)/sbt test:doc</b></i><br>
 To generate report for compliance to Scala style guide:<br><b><i> $(ROOT)/sbt scalastyle</i></b><br>
@@ -88,20 +89,9 @@ A simple <i>pom.xml</i> is available to build the library and execute the test c
 <h2 id="run">Run examples</h2>
 <u>Note</u>: As the implementation evolves over-time, few test examples may differ from the original test described in the book. The implementation of the algorithm is not expected to change.
 <br>
-<h3>Examples in a chapter</h3>
-To run the examples of a particular chapter (i.e. Chapter 4)<br>
-<b>$(ROOT)/$sbt<br>
-&#62;test-only org.scalaml.app.chap4.Chap4</b>
-<h3>All examples</h3>
-To run all examples with output configuration:<br>
-<b>$(ROOT)/sbt "test:run options"</b> where options is a list of possible outputs<ul>
-<li><b>console</b> to output results onto standard output</li>
-<li><b>logger</b> to output results into a log file (log4j)</li>
-<li><b>chart</b> to plot results using <i>jFreeChart</i></li>
-</ul>
-<b>$(ROOT)/sbt "test:run log chart"</b> write test results into a log and charts<br>
-<b>$(ROOT)/sbt test:run</b> write test results into the standard output and the charts.<br>
-<b>$(ROOT)/mvn test</b> to compile and run the examples
+Contrary to the first edition. the examples in the book are written as test using Scalatest<Br>
+<b> $(ROOT)/sbt clean test</b><br>  or
+<b>$(ROOT)/mvn test</b><br>
 <br>
 <h2 id="persistency">Persistent models and configurations</h2>
 The package object <b>org.scalaml.core.Design</b> provide the trait (or skeleton implementation) of the persistent model <b>Design.Model</b> and configuration <b>Design.Config</b>.<br>
