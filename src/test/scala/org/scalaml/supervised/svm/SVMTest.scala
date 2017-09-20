@@ -42,7 +42,7 @@ final class SVMTest extends FlatSpec with Matchers with Logging with Resource {
     * Evaluate SVM as a binary classifier
     */
   it should s"$name evaluation binary classifier" in {
-    show(s"$name evaluation binary classifier")
+    show(s"Evaluation binary classifier")
 
     val relativePath = "supervised/svm/dividends2.csv"
     val C = 1.0
@@ -87,7 +87,7 @@ final class SVMTest extends FlatSpec with Matchers with Logging with Resource {
     * Compare multiple kernel functions for various profiles for input data
     */
   it should s"$name evaluation kernel functions" in {
-    show(s"$name evaluation kernel functions")
+    show(s"Evaluation kernel functions")
 
     // Generic parameters for the support vector machines
     val EPS = 0.001
@@ -182,7 +182,7 @@ final class SVMTest extends FlatSpec with Matchers with Logging with Resource {
     * Evaluate the impact of the value of the margin on the accuracy of the SVM classifier
     */
   it should s"$name evaluation of impact of margin" in {
-    show("$name evaluation of impact of margin")
+    show("Evaluation of impact of margin")
 
     val GAMMA = 0.8
     val CACHE_SIZE = 1<<8
@@ -195,7 +195,7 @@ final class SVMTest extends FlatSpec with Matchers with Logging with Resource {
       val result = (0.1 until 5.0 by 0.1)
                    .flatMap( evalMargin(values._1, values._2, _) ).mkString("\n")
 
-      show(s"\n$name Margin with\nC\tMargin\n$result")
+      show(s"\nMargin with\nC\tMargin\n$result")
     }).getOrElse(-1)
 
     def generate: Option[(Features, DblVec)] = {
@@ -232,7 +232,7 @@ final class SVMTest extends FlatSpec with Matchers with Logging with Resource {
     * Evaluate the single class SVM for outliers or defects detection
     */
   it should s"$name Single class model for detection of outliers" in {
-    show("$name Single class model for detection of outliers")
+    show("Single class model for detection of outliers")
 
     val relPath = "supervised/svm/dividends2.csv"
     val NU = 0.2
@@ -287,9 +287,9 @@ final class SVMTest extends FlatSpec with Matchers with Logging with Resource {
     */
   it should s"$name Support vector regression" in {
     import org.scalaml.trading.GoogleFinancials._
-    show(s"$name Support vector regression")
+    show("Support vector regression")
 
-    val relPath = "svm/SPY.csv"
+    val relPath = "supervised/svm/SPY.csv"
     val C = 12
     val GAMMA = 0.3
     val EPS = 1e-3

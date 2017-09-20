@@ -30,7 +30,7 @@ final class MetropolisHastingsTest extends FlatSpec with Matchers with org.scala
   val linear = (x: Double) => 2.0*x -1.0
 
   it should s"$name evaluation square signal with 20 iterations and 0.5 initial value" in {
-    show(s"$name evaluation square signal with 20 iterations and 0.5 initial value")
+    show(s"Evaluation square signal with 20 iterations and 0.5 initial value")
 
     val numIterations = 20
     val initialValue = 0.5
@@ -43,7 +43,7 @@ final class MetropolisHastingsTest extends FlatSpec with Matchers with org.scala
 
 
   it should s"$name evaluation square signal with 100 iterations and 0.5 initial value" in {
-    show("$name evaluation square signal with 100 iterations and 0.5 initial value")
+    show("Evaluation square signal with 100 iterations and 0.5 initial value")
 
     val numIterations = 100
     val initialValue = 0.5
@@ -56,7 +56,7 @@ final class MetropolisHastingsTest extends FlatSpec with Matchers with org.scala
   }
 
   it should s"$name evaluation square signal with 250 iterations and 0.5 initial value" in {
-    show("$name evaluation square signal with 100 iterations and 0.5 initial value")
+    show("Evaluation square signal with 100 iterations and 0.5 initial value")
 
     val numIterations = 250
     val initialValue = 0.5
@@ -68,14 +68,14 @@ final class MetropolisHastingsTest extends FlatSpec with Matchers with org.scala
   }
 
   it should s"$name evaluation square signal with 250 iterations and 1.0 initial value" in {
-    show("$name evaluation square signal with 250 iterations and 1.0 initial value")
+    show("Evaluation square signal with 250 iterations and 1.0 initial value")
 
     val numIterations = 250
     val initialValue = 1.0
 
     val results = test(numIterations, initialValue)
     val acceptance = results.acceptedRate(numIterations)
-    acceptance > 0.85 should be (true)
+    acceptance > 0.80 should be (true)
     show(s"$name ${results.toString}\n$acceptance")
   }
 
