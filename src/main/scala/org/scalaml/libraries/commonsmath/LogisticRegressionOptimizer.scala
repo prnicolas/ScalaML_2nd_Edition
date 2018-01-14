@@ -18,7 +18,6 @@
 package org.scalaml.libraries.commonsmath
 
 import scala.util.Try
-
 import org.apache.commons.math3.fitting.leastsquares._
 import org.apache.commons.math3.fitting.leastsquares.LeastSquaresOptimizer.Optimum
 

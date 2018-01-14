@@ -20,7 +20,7 @@ package org.scalaml.validation
 import scala.collection._
 import org.scalaml.Predef._
 import MulticlassValidation._
-import org.scalaml.Predef.Context._
+import org.scalaml.Predef.Context.ToDouble
 
 trait ArrayToInt[T] {
   def apply(t: Array[T]): Int

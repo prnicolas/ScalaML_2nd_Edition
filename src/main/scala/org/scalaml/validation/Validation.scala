@@ -17,8 +17,6 @@
  */
 package org.scalaml.validation
 
-import org.scalaml.Predef.Context.ToDouble
-import org.scalaml.Predef._
 
 /**
  * Generic trait for the validation method that define a single validation scoring method

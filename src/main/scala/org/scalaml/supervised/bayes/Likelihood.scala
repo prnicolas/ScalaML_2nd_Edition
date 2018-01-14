@@ -19,7 +19,6 @@ package org.scalaml.supervised.bayes
 
 import org.scalaml.Predef._
 import org.scalaml.util.FormatUtils
-import NaiveBayesModel._
 import Likelihood._
 import FormatUtils._
 import org.scalaml.Predef.Context.ToDouble

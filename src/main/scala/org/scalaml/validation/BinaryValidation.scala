@@ -17,10 +17,8 @@
  */
 package org.scalaml.validation
 
-import org.scalaml.Predef.Context._
 import scala.util.Try
 import org.scalaml.util.MapUtils.Counter
-import org.scalaml.Predef._
 
 /**
  * Sealed case class that implements the labels such as TP (true positive), TN (true negative)

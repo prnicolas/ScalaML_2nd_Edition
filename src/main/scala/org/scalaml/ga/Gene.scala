@@ -18,9 +18,7 @@
 package org.scalaml.ga
 
 import java.util
-
 import org.scalaml.Predef.Context.ToDouble
-
 import scala.annotation.implicitNotFound
 
 /**

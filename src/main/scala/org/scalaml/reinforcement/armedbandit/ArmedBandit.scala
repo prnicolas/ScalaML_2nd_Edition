@@ -1,7 +1,6 @@
 package org.scalaml.reinforcement.armedbandit
 
 import org.scalaml.core.ITransform
-
 import scala.util.Try
 
 

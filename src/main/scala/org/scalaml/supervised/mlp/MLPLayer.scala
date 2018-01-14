@@ -19,7 +19,6 @@ package org.scalaml.supervised.mlp
 
 import scala.collection._
 
-import org.scalaml.Predef._
 import org.scalaml.util.FormatUtils._
 import org.scalaml.stats.TSeries._
 import MLPModel._

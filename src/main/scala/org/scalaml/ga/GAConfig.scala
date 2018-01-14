@@ -44,7 +44,7 @@ import org.scalaml.core.Design.Config
  *
  * @author Patrick Nicolas
  * @since 0.97 August 28, 2013
- * @version 0.98.2
+ * @version 0.99.2
  * @see Scala for Machine Learning Chapter 13 ''Evolutionary Computing'' / Implementation / GA
  * configuration
  */

@@ -21,7 +21,6 @@ import scala.util.Try
 import org.apache.log4j.Logger
 
 import org.scalaml.util.MathUtils._
-import org.scalaml.util.LoggingUtils._
 import org.scalaml.supervised.hmm.{HMMModel, HMMConfig, HMMTreillis}
 import HMMConfig._
 

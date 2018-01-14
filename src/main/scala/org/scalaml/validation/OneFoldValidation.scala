@@ -17,8 +17,6 @@
  */
 package org.scalaml.validation
 
-import org.scalaml.Predef.Context.ToDouble
-
 import scala.util.{Random, Try}
 import scala.language.implicitConversions
 import org.scalaml.Predef._

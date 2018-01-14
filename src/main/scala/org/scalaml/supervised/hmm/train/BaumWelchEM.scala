@@ -17,14 +17,12 @@
  */
 package org.scalaml.supervised.hmm.train
 
-import scala.util.Try
 import scala.annotation.tailrec
 
 import org.apache.log4j.Logger
 import org.scalaml.supervised.hmm.{HMMConfig, HMMModel}
 import org.scalaml.supervised.hmm.eval.{Alpha, Beta}
 import org.scalaml.util.LoggingUtils
-import LoggingUtils._
 
 /**
  * Class that update the backward-forward lattice of observations and

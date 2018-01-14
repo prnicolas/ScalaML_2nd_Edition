@@ -21,10 +21,11 @@ import scala.util.{Random, Try}
 
 
 /**
-  *
-  * @param epsilon
-  * @param arms
-  * @tparam U
+  * SImple eGreedy algorithm
+  * @param epsilon Threshold value for random exploration
+  * @param arms List of arams
+  * @tparam U Type of arms bounded by Arm
+  * @version 0.99.2
   */
 private[scalaml] class EGreedy[U <: Arm] (
   epsilon: Double,
@@ -38,7 +39,6 @@ private[scalaml] class EGreedy[U <: Arm] (
   //var cumulRegret: Double = _
 
   override def select: U = if(nextDouble < epsilon) arms(nextInt(arms.size)) else arms.sortBy(_.mean).head
-
 
   /**
     * Update the number of successes and failures for each arms

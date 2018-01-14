@@ -19,7 +19,6 @@ package org.scalaml.libraries.commonsmath
 
 import scala.language.implicitConversions
 import org.apache.commons.math3.stat.regression.OLSMultipleLinearRegression
-
 import org.scalaml.Predef._
 
 /**

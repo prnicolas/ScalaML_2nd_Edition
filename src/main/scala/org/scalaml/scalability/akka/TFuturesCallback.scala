@@ -18,17 +18,15 @@
 package org.scalaml.scalability.akka
 
 // Scala std.lib
-import scala.util.Try
-import scala.concurrent.{Await, Future}
+import scala.concurrent.Future
 import scala.concurrent.ExecutionContext.Implicits.global
-import scala.collection.mutable.{ArrayBuffer, ListBuffer}
+import scala.collection.mutable.ArrayBuffer
 
 // 3rd Party lib
 import org.apache.log4j.Logger
 
 // ScalaMl classes
 import org.scalaml.Predef._
-import org.scalaml.core.ETransform
 import org.scalaml.scalability.akka.message._
 import org.scalaml.util.LoggingUtils._
 import Controller._

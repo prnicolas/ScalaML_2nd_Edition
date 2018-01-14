@@ -18,7 +18,7 @@
 package org.scalaml.spark
 
 import org.apache.spark.SparkConf
-import org.apache.spark.sql.{DataFrame, Dataset, Encoders, SparkSession}
+import org.apache.spark.sql.{DataFrame, Dataset, SparkSession}
 
 /**
  * Class that manages the lifecyle of a spark session

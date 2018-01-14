@@ -19,12 +19,8 @@ package org.scalaml.reinforcement.qlearning
 
 // Scala lib
 import scala.collection._
-import scala.collection.mutable.ListBuffer
 import scala.util.Random
-// ScalaMl classes
-import org.scalaml.core.Design.Model
-import org.scalaml.util.DisplayUtils
-import QLConfig._
+
 
 /**
  * Class that defines the search space (States x Actions) for the Q-Learning algorithm.

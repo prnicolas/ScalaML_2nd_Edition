@@ -32,7 +32,6 @@ import org.apache.spark.storage.StorageLevel
 
 // Scala for machine classes
 import org.scalaml.core.ETransform
-import org.scalaml.Predef._
 import org.scalaml.workflow.data.DataSource
 
 /**

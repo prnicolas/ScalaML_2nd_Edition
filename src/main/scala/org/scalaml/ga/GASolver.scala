@@ -35,7 +35,7 @@ import scala.util.Try
  * @param config  Configuration parameters for the GA algorithm. The configuration is used as
  * a model for the explicit data transformation.
  * @param score Scoring method for the chromosomes of this population
- * @param _monitor optional method to monitor the state and size of the population during
+ * @param tracker optional method to monitor the state and size of the population during
  * reproduction.
  *
  * @author Patrick Nicolas

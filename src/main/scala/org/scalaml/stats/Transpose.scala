@@ -19,7 +19,8 @@ package org.scalaml.stats
 
 import scala.reflect.ClassTag
 import scala.language.implicitConversions
-import org.scalaml.Predef._
+
+
 /**
  * Singleton that encapsulates the magnet design pattern for the transposition
  * of parameterized multi-dimension time series

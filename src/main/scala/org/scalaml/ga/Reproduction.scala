@@ -18,7 +18,6 @@
 package org.scalaml.ga
 
 import org.scalaml.Predef.Context.ToDouble
-
 import scala.annotation.switch
 import scala.util.Random
 

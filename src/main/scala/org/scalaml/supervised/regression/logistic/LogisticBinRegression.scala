@@ -17,7 +17,7 @@
  */
 package org.scalaml.supervised.regression.logistic
 
-import scala.util.{Try, Random}
+import scala.util.Try
 import org.apache.log4j.Logger
 
 import org.scalaml.Predef._

@@ -18,7 +18,6 @@
 package org.scalaml.sampling
 
 import scala.collection.mutable
-import scala.util.Random
 
 /**
   * Definition of the Bootstrapping method with replacement

@@ -17,13 +17,13 @@
  */
 package org.scalaml.trading
 
+
 import scala.collection._
 import org.scalaml.workflow.data.DataSource
 import org.scalaml.stats.TSeries
 import org.scalaml.util.MapUtils.NumericAccumulator
 import YahooFinancials._
 import TSeries._
-import org.scalaml.Predef.Context.ToDouble
 
 /**
  * Class that defines the model for a traded option on a security. An option is fully
@@ -82,7 +82,7 @@ final private[scalaml] class OptionModel(
    * @return A map of array of levels for the option price and accuracy
    */
   def quantize(o: Array[Double]): Map[Array[Int], Double] = {
-    val mapper = new mutable.HashMap[Int, Array[Int]]
+    val mapper = mutable.HashMap[Int, Array[Int]]()
 
     //	val acc = new NumericAccumulator[Int]
     val acc: NumericAccumulator[Int] = propsList.view.map(_.toArray)

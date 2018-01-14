@@ -17,8 +17,6 @@
  */
 package org.scalaml.supervised.bayes
 
-import org.scalaml.Predef.Context._
-import NaiveBayesModel._
 
 /**
  * Defines a Multi-class (or multinomial) Naive Bayes model for n classes.

@@ -17,8 +17,6 @@
  */
 package org.scalaml.reinforcement.qlearning
 
-import scala.util.Random
-import org.scalaml.Predef._
 
 /**
  * State in the Q-learning. A state is uniquely defined by its identifier and the list of

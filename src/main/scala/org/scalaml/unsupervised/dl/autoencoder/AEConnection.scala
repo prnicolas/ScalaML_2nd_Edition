@@ -17,7 +17,6 @@
   */
 package org.scalaml.unsupervised.dl.autoencoder
 
-import org.scalaml.supervised.mlp._
 import AE._
 import org.scalaml.stats.TSeries.innerDouble
 import org.scalaml.supervised.mlp.{Delta, MLPConnection, MLPLayer, MLPModel}

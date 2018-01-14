@@ -20,7 +20,7 @@ package org.scalaml.reinforcement.qlearning
 // Scala standard library
 import scala.collection._
 import scala.collection.mutable.ArrayBuffer
-import scala.util.{Random, Try, Success, Failure}
+import scala.util.Try
 // 3rd party library
 import org.apache.log4j.Logger
 // ScalaMl classes

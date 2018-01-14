@@ -19,7 +19,6 @@ package org.scalaml.ga
 
 // Java and Scala standard libraries
 import org.scalaml.Predef.Context.ToDouble
-
 import scala.collection.mutable
 import scala.collection.mutable.ArrayBuffer
 // 3rd party libraries

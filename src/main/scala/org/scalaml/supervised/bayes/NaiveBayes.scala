@@ -29,8 +29,7 @@ import org.scalaml.validation.MulticlassValidation
 import org.scalaml.core.ITransform
 import org.scalaml.supervised.Supervised
 import org.scalaml.util.LoggingUtils._
-import NaiveBayesModel._
-import TSeries._, Stats._, NaiveBayes._
+import TSeries._, NaiveBayes._
 
 /**
  * Generic Binomial Naive Bayes classification class. The class is used for both training

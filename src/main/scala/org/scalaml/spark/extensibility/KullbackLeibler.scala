@@ -19,7 +19,6 @@ package org.scalaml.spark.extensibility
 
 import org.apache.spark.ml.evaluation.Evaluator
 import org.apache.spark.ml.param.ParamMap
-import org.apache.spark.ml.{Estimator, PipelineStage}
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.{Dataset, SparkSession}
 

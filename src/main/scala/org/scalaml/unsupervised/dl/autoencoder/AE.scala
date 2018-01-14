@@ -23,7 +23,6 @@ import org.scalaml.core.ITransform
 import org.scalaml.stats.TSeries.dimension
 import org.scalaml.supervised.mlp.MLP.MLPMode
 import org.scalaml.supervised.mlp.MLPModel
-import org.scalaml.supervised.mlp.MLPModel
 import org.scalaml.util.LoggingUtils.Monitor
 import org.scalaml.util.MathUtils._
 

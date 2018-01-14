@@ -20,7 +20,6 @@ package org.scalaml.spark.streaming
 import org.apache.spark.SparkContext
 import org.apache.spark.rdd.RDD
 import org.apache.spark.streaming.dstream.InputDStream
-import org.apache.spark.streaming.{Duration, Milliseconds, Seconds, StreamingContext}
 
 import scala.reflect.ClassTag
 

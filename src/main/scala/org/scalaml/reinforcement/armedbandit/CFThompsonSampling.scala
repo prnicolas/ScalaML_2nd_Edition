@@ -17,15 +17,12 @@
   */
 package org.scalaml.reinforcement.armedbandit
 
-import breeze.stats.distributions.Beta
-
-
-
 
 /**
-  *
-  * @param arms
-  * @tparam U
+  * Very simple Free-context Thompson Sampling implementation
+  * @version 0.99.2
+  * @param arms List of arms of type bounded by BetaArm
+  * @tparam U Type of Arm
   */
 private[scalaml] final class CFThompsonSampling[U <: BetaArm]  (
     epsilon: Double,
